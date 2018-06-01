@@ -8,8 +8,8 @@ import "sync"
 type call struct {
 	//wg  sync.WaitGroup
 	done chan struct{}
-	val interface{}
-	err error
+	val  interface{}
+	err  error
 }
 
 type Group struct {
@@ -17,13 +17,11 @@ type Group struct {
 	m  map[string]*call // lazily initialized
 }
 
-type DoFunc func() (interface{}, error)
-
 // Do executes and returns the results of the give function, making
 // sure that only one execution is in-flight for a given key at a
 // time. If a duplicate comes in, the duplicate caller waits for then
 // original to complete and receive the same results
-func (g *Group) Do(key string, fn DoFunc) (interface{}, error) {
+func (g *Group) Do(key string, fn func() (interface{}, error)) (interface{}, error) {
 	g.mu.Lock()
 	if g.m == nil {
 		g.m = make(map[string]*call)
@@ -54,6 +52,6 @@ func (g *Group) Do(key string, fn DoFunc) (interface{}, error) {
 
 func newCall() *call {
 	return &call{
-		done:make(chan struct{}),
+		done: make(chan struct{}),
 	}
 }
