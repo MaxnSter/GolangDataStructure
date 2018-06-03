@@ -4,10 +4,10 @@ package twosum
 func TwoSumSorted(numbers []int, target int) []int {
 	for i := 0; i < len(numbers)-1; i++ {
 		complement := target - numbers[i]
-		if idx := bSearch(numbers, complement); idx != -1 && idx != i {
+		if idx := bSearch(numbers[i+1:], complement); idx != -1 {
+			idx += i + 1
 			return []int{i + 1, idx + 1}
 		}
-
 	}
 
 	return nil
@@ -22,10 +22,8 @@ func bSearch(numbers []int, finder int) (idx int) {
 
 		if numbers[mid] > finder {
 			end = mid - 1
-			continue
 		} else if numbers[mid] < finder {
 			begin = mid + 1
-			continue
 		} else {
 			return mid
 		}
