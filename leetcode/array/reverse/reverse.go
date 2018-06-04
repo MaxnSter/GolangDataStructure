@@ -11,7 +11,7 @@ func reverse(x int) int {
 		x /= 10
 	}
 
-	if result > math.MaxInt32 || result < -math.MaxInt32 {
+	if result > math.MaxInt32 || result < math.MinInt32 {
 		return 0
 	}
 	return result
