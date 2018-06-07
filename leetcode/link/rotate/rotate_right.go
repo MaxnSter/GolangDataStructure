@@ -27,6 +27,38 @@ type ListNode struct {
 	Next *ListNode
 }
 
+// 我把链表的优势丢了, 反思.
+func rotateRight1(head *ListNode, k int) *ListNode {
+	if head == nil || head.Next == nil {
+		return head
+	}
+
+	listLen := getListLen(head)
+	k = k % listLen
+	if k == 0 {
+		return head
+	}
+
+	lHead, lTail := head, head
+
+	for i := 0; i < listLen-k-1; i++ {
+		lHead = lHead.Next
+	}
+
+	lTail = lHead.Next
+	lTailTmp := lTail
+	lHead.Next = nil
+
+	for lTail.Next != nil {
+		lTail = lTail.Next
+	}
+	lTail.Next = head
+	head = lTailTmp
+
+	return head
+
+}
+
 func rotateRight(head *ListNode, k int) *ListNode {
 
 	if head == nil || head.Next == nil {
@@ -85,14 +117,14 @@ func rotateRight2(head *ListNode, k int) *ListNode {
 		return head
 	}
 
-	for i := 0; i < listLen - k; i++ {
+	for i := 0; i < listLen-k; i++ {
 		head = moveListToLeft(head)
 	}
 
 	return head
 }
 
-func moveListToLeft(head *ListNode) *ListNode{
+func moveListToLeft(head *ListNode) *ListNode {
 	tmp := head.Val
 	l := head
 
@@ -103,4 +135,13 @@ func moveListToLeft(head *ListNode) *ListNode{
 
 	l.Val = tmp
 	return head
+}
+
+
+func getListLen(head *ListNode) (listLen int) {
+	for head != nil {
+		listLen++
+		head = head.Next
+	}
+	return
 }
