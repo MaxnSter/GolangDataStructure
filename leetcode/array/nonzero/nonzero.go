@@ -12,18 +12,18 @@ package nonzero
 //
 // 必须在原数组上操作，不能拷贝额外的数组。
 // 尽量减少操作次数
-func moveZeroes(nums []int)  {
+func moveZeroes(nums []int) {
 
 	if len(nums) == 0 {
 		return
 	}
 
-	if len(nums) == 1 && nums[0] != 0{
+	if len(nums) == 1 && nums[0] != 0 {
 		return
 	}
 
 	idxNonZero := 0
-	for i := 0;  i < len(nums); i++ {
+	for i := 0; i < len(nums); i++ {
 		if nums[i] != 0 {
 			nums[idxNonZero] = nums[i]
 
