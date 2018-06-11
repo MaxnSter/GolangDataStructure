@@ -19,11 +19,11 @@ func TestHashing(t *testing.T) {
 	hash.Add("6", "4", "2")
 
 	testCases := map[string]string{
-		"2":"2",
-		"11":"2",
-		"23":"4",
-		"25":"6",
-		"27":"2",
+		"2":  "2",
+		"11": "2",
+		"23": "4",
+		"25": "6",
+		"27": "2",
 	}
 
 	for k, v := range testCases {

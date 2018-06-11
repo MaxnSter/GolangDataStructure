@@ -137,7 +137,6 @@ func moveListToLeft(head *ListNode) *ListNode {
 	return head
 }
 
-
 func getListLen(head *ListNode) (listLen int) {
 	for head != nil {
 		listLen++

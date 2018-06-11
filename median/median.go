@@ -58,7 +58,6 @@ func popFunc(h *[]int) interface{} {
 	return x
 }
 
-
 /**
  * Your MedianFinder object will be instantiated and called as such:
  * obj := Constructor();

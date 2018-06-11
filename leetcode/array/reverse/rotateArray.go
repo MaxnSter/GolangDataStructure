@@ -71,7 +71,7 @@ func rotate1(nums []int, k int) {
 }
 
 func moveArray(nums []int) {
-	if len(nums) < 1 {
+	if len(nums) <= 1 {
 		return
 	}
 

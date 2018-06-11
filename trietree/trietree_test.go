@@ -27,7 +27,7 @@ func TestTrieTree_Chk(t *testing.T) {
 	rd := bytes.NewReader(input)
 	tree := BuildTrieTree(rd)
 
-	lines := []string {
+	lines := []string{
 		"我代言了贪玩蓝月",
 		"abcd",
 		"edf",
@@ -48,7 +48,7 @@ func TestTrieTree_Chk2(t *testing.T) {
 	rd := bytes.NewReader(input)
 	tree := BuildTrieTree(rd)
 
-	lines := []string {
+	lines := []string{
 		"我代言了贪玩",
 		"helllllo",
 		"deef",
@@ -69,14 +69,14 @@ func TestTrieTree_Filter(t *testing.T) {
 	rd := bytes.NewReader(input)
 	tree := BuildTrieTree(rd)
 
-	lines := []string {
+	lines := []string{
 		"我代言了贪玩蓝月",
 		"abcd",
 		"def",
 		"acccccccab",
 	}
 
-	correct := []string {
+	correct := []string{
 		"我代言了*",
 		"*cd",
 		"def",
@@ -91,5 +91,3 @@ func TestTrieTree_Filter(t *testing.T) {
 		}
 	}
 }
-
-
