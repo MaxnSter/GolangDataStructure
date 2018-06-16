@@ -1,4 +1,4 @@
-package util
+package uuid
 
 import (
 	"sync"
@@ -50,7 +50,7 @@ type uuidWorker struct {
 //使用多个uuidWorker时,id由调用者保证不重复
 func NewUUIDWorker(workerId int64) (*uuidWorker, error) {
 	if workerId < 0 || workerId > workerMax {
-		return nil, errors.New("error worker id")
+		return nil, errors.New("error worker_pool id")
 	}
 
 	return &uuidWorker{
