@@ -20,6 +20,7 @@ func (s *source) Next() bool {
 		return false
 	}
 
+	//更新状态,很重要!
 	s.curIdx++
 	return true
 }
