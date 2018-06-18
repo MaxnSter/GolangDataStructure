@@ -21,7 +21,7 @@ https://leetcode-cn.com/problems/array-partition-i/description/
 func arrayPairSum(nums []int) int {
 	sort.Ints(nums)
 	var minSum int
-	for i := 0; i < len(nums); i+= 2 {
+	for i := 0; i < len(nums); i += 2 {
 		minSum += nums[i]
 	}
 	return minSum

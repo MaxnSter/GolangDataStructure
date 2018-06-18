@@ -1,4 +1,5 @@
 package position_of_largegroup
+
 /*
 在一个由小写字母构成的字符串 S 中，包含由一些连续的相同字符所构成的分组。
 
@@ -24,7 +25,7 @@ package position_of_largegroup
 输出: [[3,5],[6,9],[12,14]]
 说明:  1 <= S.length <= 1000
 https://leetcode-cn.com/problems/positions-of-large-groups/description/
- */
+*/
 func largeGroupPositions(S string) [][]int {
 	position := make([][]int, 0)
 	curChar, count := S[0], 1

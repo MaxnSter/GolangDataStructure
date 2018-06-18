@@ -37,15 +37,15 @@ package matrix
 	给定矩阵的宽和高范围在 [1, 100]。
 	给定的 r 和 c 都是正数。
 	https://leetcode-cn.com/problems/reshape-the-matrix/description/
- */
+*/
 
 func matrixReshape(nums [][]int, r int, c int) [][]int {
 	l := len(nums) * len(nums[0])
-	if l != r * c {
+	if l != r*c {
 		return nums
 	}
 
-	reshape := make([][]int,r)
+	reshape := make([][]int, r)
 	for i := 0; i < r; i++ {
 		reshape[i] = make([]int, c)
 	}

@@ -1,7 +1,7 @@
 package disappeared
 
 func findDisappearedNumbers(nums []int) []int {
-	disappeare :=  make([]int, 0)
+	disappeare := make([]int, 0)
 	for i := 0; i < len(nums); i++ {
 		idx := absInt(nums[i]) - 1
 		if nums[idx] > 0 {
@@ -11,14 +11,14 @@ func findDisappearedNumbers(nums []int) []int {
 
 	for i := 0; i < len(nums); i++ {
 		if nums[i] > 0 {
-			disappeare = append(disappeare, i + 1)
+			disappeare = append(disappeare, i+1)
 		}
 	}
 
 	return disappeare
 }
 
-func absInt(x int) int{
+func absInt(x int) int {
 	if x < 0 {
 		return -x
 	}
