@@ -23,32 +23,20 @@ cost 的长度将会在 [2, 1000]。
 每一个 cost[i] 将会是一个Integer类型，范围为 [0, 999]。
 */
 func minCostClimbingStairs(cost []int) int {
-	cost1 := costClimbingStairs(cost)
-	cost2 := costClimbingStairs(cost[1:])
-
-	if cost1 < cost2 {
-		return cost1
-	} else {
-		return cost2
+	n := len(cost)
+	dp := make([]int, len(cost))
+	copy(dp, cost)
+	dp[0] = cost[0]
+	dp[1] = cost[1]
+	for i := 2; i < len(cost); i++ {
+		dp[i] = cost[i] + MinInt(dp[i-1], dp[i-2])
 	}
+	return MinInt(dp[n-1], dp[n-2])
 }
 
-func costClimbingStairs(cost []int) int {
-	//注意点1:起点固定
-	stepCost, stepB, stepE := cost[0], 1, 2
-	curStep := 0
-
-	for stepE < len(cost) {
-		if cost[stepE] <= cost[stepB] {
-			//相等时候优先选择后面的那一台阶
-			curStep = stepE
-		} else {
-			curStep = stepB
-		}
-
-		stepCost += cost[curStep]
-		stepB, stepE = curStep+1, curStep+2
+func MinInt(x, y int) int {
+	if x < y {
+		return x
 	}
-
-	return stepCost
+	return y
 }
