@@ -35,7 +35,8 @@ func threeSum(nums []int) [][]int {
 		idxR := len(nums) - 1
 
 		for idxL < idxR {
-			if sum := nums[i] + nums[idxL] + nums[idxR]; sum == 0 {
+			sum := nums[i] + nums[idxL] + nums[idxR]
+			if sum == 0 {
 				sums := []int{nums[i], nums[idxL], nums[idxR]}
 				if !contain3(res, sums) {
 					res = append(res, sums)
