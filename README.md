@@ -6,7 +6,7 @@ GolangDataStructure
 algorithm
 ===
 - [一致性哈希](https://github.com/MaxnSter/GolangDataStructure/tree/master/consistenthash)
-- [第K大数](https://github.com/MaxnSter/GolangDataStructure/tree/master/kth)
+- [Kth](https://github.com/MaxnSter/GolangDataStructure/tree/master/kth)
 - [LRU缓存](https://github.com/MaxnSter/GolangDataStructure/tree/master/lru)
 - [N路归并](https://github.com/MaxnSter/GolangDataStructure/tree/master/nmerge)
 - [N皇后](https://github.com/MaxnSter/GolangDataStructure/tree/master/nqueens)
