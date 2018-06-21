@@ -8,6 +8,6 @@ import (
 
 func Test(t *testing.T) {
 	assert.Equal(t, [][]int{
-		{0,0,0},
-	}, threeSum([]int{0, 0, 0,0}))
+		{0, 0, 0},
+	}, threeSum([]int{0, 0, 0, 0}))
 }

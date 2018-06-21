@@ -1,4 +1,5 @@
 package largest_num_atleasr_twice
+
 /*
 在一个给定的数组nums中，总是存在一个最大元素 。
 
@@ -22,7 +23,7 @@ package largest_num_atleasr_twice
 提示:
 nums 的长度范围在[1, 50].
 每个 nums[i] 的整数范围在 [0, 99].
- */
+*/
 func dominantIndex(nums []int) int {
 	maximum, maxIdx, second := -1, -1, -1
 	for i := 0; i < len(nums); i++ {
@@ -42,7 +43,7 @@ func dominantIndex(nums []int) int {
 		}
 	}
 
-	if second * 2 <= maximum {
+	if second*2 <= maximum {
 		return maxIdx
 	}
 	return -1

@@ -7,6 +7,6 @@ import (
 )
 
 func Test(t *testing.T) {
-	assert.Equal(t,true, checkPossibility([]int{4,2,3} ))
-	assert.Equal(t,false, checkPossibility([]int{4,2,1} ))
+	assert.Equal(t, true, checkPossibility([]int{4, 2, 3}))
+	assert.Equal(t, false, checkPossibility([]int{4, 2, 1}))
 }

@@ -43,7 +43,7 @@ func summaryRanges(nums []int) []string {
 			}
 
 			//重置下标
-			idxB,idxE = i,i
+			idxB, idxE = i, i
 		}
 	}
 

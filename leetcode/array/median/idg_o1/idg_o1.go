@@ -85,7 +85,7 @@ func (this *RandomizedSet) Remove(val int) bool {
 	return true
 }
 
-/** Get a random element from the set. */
+/** Get a reorder element from the set. */
 func (this *RandomizedSet) GetRandom() int {
 	if len(this.vs) == 0 {
 		return this.vs[0]

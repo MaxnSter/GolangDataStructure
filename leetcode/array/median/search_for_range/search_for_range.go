@@ -27,7 +27,7 @@ func searchRange(nums []int, target int) []int {
 	idx := sort.Search(len(nums), func(i int) bool {
 		return nums[i] >= target
 	})
-	if  idx == len(nums) || nums[idx] != target{
+	if idx == len(nums) || nums[idx] != target {
 		return []int{-1, -1}
 	}
 

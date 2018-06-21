@@ -5,7 +5,7 @@ import "testing"
 /*
 ["RandomizedSet","insert","remove","insert","remove","getRandom","getRandom","getRandom","getRandom","getRandom","getRandom","getRandom","getRandom","getRandom","getRandom"]
 [[],[0],[0],[-1],[0],[],[],[],[],[],[],[],[],[],[]]
- */
+*/
 func Test(t *testing.T) {
 	s := Constructor()
 	s.Insert(0)

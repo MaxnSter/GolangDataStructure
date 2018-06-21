@@ -1,4 +1,5 @@
 package search_in_rotated
+
 /*
 33. 搜索旋转排序数组
 假设按照升序排序的数组在预先未知的某个点上进行了旋转。
@@ -19,13 +20,13 @@ package search_in_rotated
 
 输入: nums = [4,5,6,7,0,1,2], target = 3
 输出: -1
- */
+*/
 //key在数组上任意选一点,必定至少有一侧是有序的
 func search(nums []int, target int) int {
-	start, end := 0, len(nums) - 1
+	start, end := 0, len(nums)-1
 
 	for start <= end {
-		mid := start + (end - start)/2
+		mid := start + (end-start)/2
 		if nums[mid] == target {
 			return mid
 		}

@@ -75,7 +75,7 @@ func pivotIndexEffective2(nums []int) int {
 	sum, curSum := sumArray(nums), 0
 	for i := 0; i < len(nums); i++ {
 		//上面那个公式简单合并下
-		if curSum * 2 == sum-nums[i] {
+		if curSum*2 == sum-nums[i] {
 			return i
 		}
 		curSum += nums[i]

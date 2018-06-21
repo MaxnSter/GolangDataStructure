@@ -72,5 +72,5 @@ func maximumProductEffetive(nums []int) int {
 		}
 	}
 
-	return maxInt(max1 * max2 * max3, min1 *min2 * max1)
+	return maxInt(max1*max2*max3, min1*min2*max1)
 }

@@ -30,7 +30,7 @@ func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 	n1, n2 := len(nums1), len(nums2)
 	var min, max int = findMinAndMax(nums1, nums2)
 
-	k := (n1 + n2+1) / 2
+	k := (n1 + n2 + 1) / 2
 	searchFunc := func(guess int) (smaller, same int) {
 		smaller1, same1 := search(nums1, guess)
 		smaller2, same2 := search(nums2, guess)
@@ -48,7 +48,7 @@ func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 	}
 }
 
-func findMinAndMax(nums1[]int, nums2[]int) (min, max int) {
+func findMinAndMax(nums1 []int, nums2 []int) (min, max int) {
 	n1, n2 := len(nums1), len(nums2)
 	if n1 == 0 {
 		return nums2[0], nums2[n2-1]
