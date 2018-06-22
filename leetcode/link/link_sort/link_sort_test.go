@@ -3,9 +3,12 @@ package link_sort
 import (
 	"bufio"
 	"fmt"
+	"math/rand"
 	"os"
+	"sort"
 	"strconv"
 	"testing"
+	"time"
 
 	"github.com/stretchr/testify/assert"
 )
@@ -60,8 +63,23 @@ func listEqual(l *ListNode, vals ...int) bool {
 	return true
 }
 
-func TestInsertSOrt(t *testing.T) {
+func TestInsertSort(t *testing.T) {
 	l := makeList(-1,5,3,4,0)
 	ls := insertionSortList(l)
 	assert.Equal(t, true, listEqual(ls,-1,0,3,4,5))
 }
+
+func TestMergeSort(t *testing.T) {
+	rand.Seed(time.Now().UnixNano())
+	var nums []int
+	for i := 0; i < 100; i++ {
+		nums = append(nums, rand.Intn(100))
+	}
+
+	l := makeList(nums...)
+	ls := sortList(l)
+	sort.Ints(nums)
+
+	assert.Equal(t, true, listEqual(ls,nums...))
+}
+
