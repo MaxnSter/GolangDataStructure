@@ -23,7 +23,7 @@ func newQ() *queue {
 }
 
 func (q *queue) PushToBack(x int) {
-	q.data = append(q.data,x)
+	q.data = append(q.data, x)
 }
 
 func (q *queue) PeekFromFront() int {
@@ -42,7 +42,7 @@ func (q *queue) PopFromFront() {
 	q.data = q.data[1:q.Size()]
 }
 
-func (q *queue) Size() int{
+func (q *queue) Size() int {
 	return len(q.data)
 }
 
@@ -51,12 +51,12 @@ func (q *queue) IsEmpty() bool {
 }
 
 type MyStack struct {
-	q * queue
+	q *queue
 }
 
 /** Initialize your data structure here. */
 func Constructor() MyStack {
-	return MyStack{q:newQ()}
+	return MyStack{q: newQ()}
 }
 
 /** Push element x onto stack. */

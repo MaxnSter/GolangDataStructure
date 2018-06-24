@@ -37,7 +37,7 @@ func levelOrder(root *TreeNode) [][]int {
 		return nil
 	}
 
-	q, result := queue.NewQueue(), make([][]int,0)
+	q, result := queue.NewQueue(), make([][]int, 0)
 	q.PushBack(root)
 
 	for !q.Empty() {
@@ -49,8 +49,12 @@ func levelOrder(root *TreeNode) [][]int {
 			q.PopFront()
 
 			level = append(level, node.Val)
-			if node.Left != nil {q.PushBack(node.Left)}
-			if node.Right != nil {q.PushBack(node.Right)}
+			if node.Left != nil {
+				q.PushBack(node.Left)
+			}
+			if node.Right != nil {
+				q.PushBack(node.Right)
+			}
 		}
 
 		result = append(result, level)

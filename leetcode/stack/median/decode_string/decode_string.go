@@ -61,7 +61,7 @@ func decodeString(s string) string {
 
 	for i := 0; i < len(s); i++ {
 		if isNumber(s[i]) {
-			digits = digits * 10 + int( s[i] - '0')
+			digits = digits*10 + int(s[i]-'0')
 			continue
 		}
 
@@ -85,7 +85,7 @@ func decodeString(s string) string {
 			strs.Pop()
 		}
 
-		if isAlpha(s[i]){
+		if isAlpha(s[i]) {
 			result.WriteByte(s[i])
 			continue
 		}

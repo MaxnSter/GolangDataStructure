@@ -64,22 +64,33 @@ func listEqual(l *ListNode, vals ...int) bool {
 }
 
 func TestInsertSort(t *testing.T) {
-	l := makeList(-1,5,3,4,0)
+	rand.Seed(time.Now().UnixNano())
+	var nums []int
+	for i := 0; i < 100000; i++ {
+		nums = append(nums, rand.Intn(100))
+	}
+
+	l := makeList(nums...)
+	start := time.Now()
 	ls := insertionSortList(l)
-	assert.Equal(t, true, listEqual(ls,-1,0,3,4,5))
+	fmt.Printf("take:%g s\n", time.Now().Sub(start).Seconds())
+	sort.Ints(nums)
+
+	assert.Equal(t, true, listEqual(ls, nums...))
 }
 
 func TestMergeSort(t *testing.T) {
 	rand.Seed(time.Now().UnixNano())
 	var nums []int
-	for i := 0; i < 100; i++ {
+	for i := 0; i < 100000; i++ {
 		nums = append(nums, rand.Intn(100))
 	}
 
 	l := makeList(nums...)
+	start := time.Now()
 	ls := sortList(l)
+	fmt.Printf("take:%g s\n", time.Now().Sub(start).Seconds())
 	sort.Ints(nums)
 
-	assert.Equal(t, true, listEqual(ls,nums...))
+	assert.Equal(t, true, listEqual(ls, nums...))
 }
-

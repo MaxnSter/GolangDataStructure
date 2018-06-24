@@ -7,5 +7,5 @@ import (
 )
 
 func Test(t *testing.T) {
-	assert.Equal(t, true,isValid("()[]{}"))
+	assert.Equal(t, true, isValid("()[]{}"))
 }

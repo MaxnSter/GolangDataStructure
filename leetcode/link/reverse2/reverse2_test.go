@@ -66,5 +66,5 @@ func listEqual(l *ListNode, vals ...int) bool {
 
 func Test(t *testing.T) {
 	l := makeList(1, 2, 3, 4, 5)
-	assert.Equal(t, true, listEqual(reverseBetween(l, 1, 5), 5,4,3,2,1))
+	assert.Equal(t, true, listEqual(reverseBetween(l, 1, 5), 5, 4, 3, 2, 1))
 }

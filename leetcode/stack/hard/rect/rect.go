@@ -68,7 +68,7 @@ func LargestRectangleArea(heights []int) int {
 	n, idxs, maxArea := len(heights), newStack(), 0
 
 	for i := 0; i < len(heights); i++ {
-		if idxs.empty() || heights[i] >= heights[idxs.top()]  {
+		if idxs.empty() || heights[i] >= heights[idxs.top()] {
 			//大于当前栈顶对应的元素值
 			idxs.push(i)
 		} else {
@@ -86,7 +86,7 @@ func LargestRectangleArea(heights []int) int {
 					w = i - idxs.top() - 1
 				}
 
-				maxArea = maxInt(maxArea, h * w)
+				maxArea = maxInt(maxArea, h*w)
 			}
 
 			//循环结束后,i对应元素大于栈顶元素
@@ -107,7 +107,7 @@ func LargestRectangleArea(heights []int) int {
 			w = n - idxs.top() - 1
 		}
 
-		maxArea = maxInt(maxArea, h * w)
+		maxArea = maxInt(maxArea, h*w)
 	}
 
 	return maxArea

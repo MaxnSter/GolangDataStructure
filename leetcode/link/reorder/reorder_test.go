@@ -61,7 +61,7 @@ func listEqual(l *ListNode, vals ...int) bool {
 }
 
 func Test(t *testing.T) {
-	l := makeList(1,2,3,4,5)
+	l := makeList(1, 2, 3, 4, 5)
 	reorderList(l)
-	assert.Equal(t, true, listEqual(l,1,5,2,4,3))
+	assert.Equal(t, true, listEqual(l, 1, 5, 2, 4, 3))
 }
