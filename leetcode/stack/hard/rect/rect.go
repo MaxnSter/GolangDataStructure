@@ -1,5 +1,7 @@
 package rect
 
+import stack2 "github.com/MaxnSter/GolangDataStructure/leetcode/stack"
+
 /*
 84. 柱状图中最大的矩形
 给定 n 个非负整数，用来表示柱状图中各个柱子的高度。每个柱子彼此相邻，且宽度为 1 。
@@ -108,6 +110,50 @@ func LargestRectangleArea(heights []int) int {
 		}
 
 		maxArea = maxInt(maxArea, h*w)
+	}
+
+	return maxArea
+}
+
+
+//这道题的关键思想是,如果
+
+func largestRectangleArea1(heights []int) int {
+	if len(heights) == 0 {
+		return 0
+	}
+
+	if len(heights) == 1 {
+		return heights[0]
+	}
+
+	//技巧1
+	heights = append(heights, -1)
+	idxStack := stack2.NewStack()
+	maxArea := 0
+
+	for i := 0; i < len(heights); i++ {
+		if idxStack.Empty() || heights[i] >= heights[idxStack.Top().(int)]  {
+			//注意点1:存入栈的是下标
+			idxStack.Push(i)
+		} else {
+			for !idxStack.Empty() &&  heights[idxStack.Top().(int)] >= heights[i] {
+				//注意点2:计算面积的height是元素值
+				h := heights[idxStack.Top().(int)]
+				idxStack.Pop()
+
+				var w int
+				if idxStack.Empty() {
+					w = i
+				} else {
+					w = i - idxStack.Top().(int) - 1
+				}
+
+				maxArea = maxInt(maxArea, h * w)
+			}
+
+			idxStack.Push(i)
+		}
 	}
 
 	return maxArea

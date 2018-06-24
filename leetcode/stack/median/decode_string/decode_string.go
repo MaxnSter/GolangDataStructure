@@ -102,3 +102,44 @@ func isAlpha(b byte) bool {
 	return (b >= 'a' && b <= 'z') ||
 		(b >= 'A' && b <= 'Z')
 }
+
+func decodeString2(s string) string {
+	numStk, strStk := stack.NewStack(), stack.NewStack()
+	result := &strings.Builder{}
+	digit := 0
+
+	for i := 0; i < len(s); i++ {
+		if isNumber(s[i]) {
+			digit = digit * 10 + int(s[i]-'0')
+			continue
+		}
+
+		if isAlpha(s[i]) {
+			result.WriteByte(s[i])
+			continue
+		}
+
+		if s[i] == '[' {
+			numStk.Push(digit)
+			digit = 0
+
+			strStk.Push(result)
+			result = &strings.Builder{}
+			continue
+		}
+
+		if s[i] == ']' {
+			curDigit := numStk.Top().(int)
+			numStk.Pop()
+
+			for i := 0; i < curDigit; i++ {
+				strStk.Top().(*strings.Builder).WriteString(result.String())
+			}
+
+			result = strStk.Top().(*strings.Builder)
+			strStk.Pop()
+		}
+	}
+
+	return result.String()
+}

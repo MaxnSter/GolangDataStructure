@@ -1,5 +1,7 @@
 package parenthese
 
+import "github.com/MaxnSter/GolangDataStructure/leetcode/stack"
+
 /*
 20. 有效的括号
 给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串，判断字符串是否有效。
@@ -37,30 +39,29 @@ func isValid(s string) bool {
 		return true
 	}
 
-	stack := make([]byte, 0)
+	stk := stack.NewStack()
 	for i := 0; i < len(s); i++ {
 		if s[i] == '(' || s[i] == '[' || s[i] == '{' {
-			stack = append(stack, s[i])
+			stk.Push(s[i])
 			continue
 		}
 
-		if s[i] == ')' && (len(stack) < 1 || stack[len(stack)-1] != '(') {
+		if v, ok := expected[s[i]]; !ok || stk.Empty() || stk.Top().(byte) != v {
 			return false
 		}
 
-		if s[i] == '}' && (len(stack) < 1 || stack[len(stack)-1] != '{') {
-			return false
-		}
-
-		if s[i] == ']' && (len(stack) < 1 || stack[len(stack)-1] != '[') {
-			return false
-		}
-
-		stack = stack[:len(stack)-1]
+		stk.Pop()
 	}
 
-	if len(stack) > 0 {
+	if stk.Empty() {
+		return true
+	} else {
 		return false
 	}
-	return true
+}
+
+var expected = map[byte]byte{
+	')': '(',
+	']': '[',
+	'}': '{',
 }
