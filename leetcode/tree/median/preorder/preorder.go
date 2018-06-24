@@ -1,5 +1,10 @@
 package preorder
 
+import (
+	"github.com/Arafatk/Dataviz/trees"
+	"github.com/MaxnSter/GolangDataStructure/leetcode/stack"
+)
+
 /*
 144. 二叉树的前序遍历
 给定一个二叉树，返回它的 前序 遍历。
@@ -25,6 +30,7 @@ type TreeNode struct {
 	Left  *TreeNode
 	Right *TreeNode
 }
+
 func preorderTraversal(root *TreeNode) []int {
 	result := make([]int, 0)
 	traversal(root, &result)
@@ -39,4 +45,30 @@ func traversal(root *TreeNode, result *[]int) {
 	*result = append(*result, root.Val)
 	traversal(root.Left, result)
 	traversal(root.Right, result)
+}
+
+func inorderTraversalNoRecursive(root *TreeNode) []int {
+	if root == nil {
+		return nil
+	}
+
+	node := root
+	result := make([]int, 0)
+	s := stack.NewStack()
+
+	for node != nil || !s.Empty() {
+		for node != nil {
+			result = append(result, node.Val)
+			s.Push(node)
+			node = node.Left
+		}
+
+		if !s.Empty() {
+			node = s.Top().(*TreeNode)
+			node = node.Right
+			s.Pop()
+		}
+	}
+
+	return result
 }
