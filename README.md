@@ -37,4 +37,18 @@ leetcode
 - 困难
     - [两个排序数组的中位数](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/array/hard/median_two_sorted)
 
+栈
+- 简单
+   - [最小栈](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/stack/easy/min_stack)
+   - [有效的括号](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/stack/easy/parenthese)
+   - [用队列实现栈](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/stack/easy/queue_to_stack)
+   - [用栈实现队列](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/stack/easy/stack_to_queue)
+- 中等
+   - [字符串解码](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/stack/median/decode_string)
+- 困难
+   - [柱形图中最大的矩形](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/stack/hard/rect)
+   - [最大矩形](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/stack/hard/max_rect)
+   - [接雨水](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/stack/hard/trap_rain)
+   - [去除重复元素](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/stack/hard/rm_dup_letters)
+
 to be continued...
