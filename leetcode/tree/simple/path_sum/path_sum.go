@@ -46,15 +46,16 @@ func chkPathSum(root *TreeNode, pathSum int, sum int, result *bool) {
 		return
 	}
 
+	pathSum += root.Val
 	//注意1,题目说的是叶子节点
 	if root.Left == nil && root.Right == nil {
 		//注意2,叶子节点计算path值也要加上自己的val
-		if pathSum+root.Val == sum {
+		if pathSum == sum {
 			*result = true
 		}
 		return
 	}
 
-	chkPathSum(root.Left, root.Val+pathSum, sum, result)
-	chkPathSum(root.Right, root.Val+pathSum, sum, result)
+	chkPathSum(root.Left, pathSum, sum, result)
+	chkPathSum(root.Right, pathSum, sum, result)
 }
