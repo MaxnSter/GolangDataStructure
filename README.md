@@ -45,10 +45,18 @@ leetcode
    - [用栈实现队列](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/stack/easy/stack_to_queue)
 - 中等
    - [字符串解码](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/stack/median/decode_string)
+   - [逆波兰表达式求值](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/stack/median/polish)
 - 困难
    - [柱形图中最大的矩形](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/stack/hard/rect)
    - [最大矩形](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/stack/hard/max_rect)
    - [接雨水](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/stack/hard/trap_rain)
    - [去除重复元素](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/stack/hard/rm_dup_letters)
-
+   - [四则计算器](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/stack/hard/basic_caculator)
+树
+- 简单
+  - [前序遍历](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/tree/median/preorder)
+  - [中序遍历](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/tree/median/inorder)
+  - [后序遍历](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/tree/median/postorder)
+  - [层次遍历](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/tree/median/level)
+  - [齿轮遍历](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/tree/median/zigzag_level)
 to be continued...
