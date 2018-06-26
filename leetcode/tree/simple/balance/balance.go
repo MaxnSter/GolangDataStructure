@@ -45,7 +45,7 @@ func isBalanced(root *TreeNode) bool {
 		return true
 	}
 
-	if absInt(maxDepth(root.Left) - maxDepth(root.Right)) > 1 {
+	if absInt(maxDepth(root.Left)-maxDepth(root.Right)) > 1 {
 		return false
 	} else {
 		return isBalanced(root.Left) && isBalanced(root.Right)
@@ -54,7 +54,7 @@ func isBalanced(root *TreeNode) bool {
 
 func maxDepth(root *TreeNode) int {
 	if root == nil {
-		return  0
+		return 0
 	}
 
 	if root.Left == nil && root.Right == nil {

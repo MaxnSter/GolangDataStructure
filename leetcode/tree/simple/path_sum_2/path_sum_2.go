@@ -52,7 +52,7 @@ func calPathSum(root *TreeNode, pathSum *[]int, sum int, results *[][]int) {
 	if root.Left == nil && root.Right == nil {
 		*pathSum = append(*pathSum, root.Val)
 
-		if sum == 0{
+		if sum == 0 {
 			result := make([]int, len(*pathSum))
 			copy(result, *pathSum)
 			*results = append(*results, result)

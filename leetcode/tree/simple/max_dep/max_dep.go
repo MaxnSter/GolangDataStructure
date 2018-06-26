@@ -36,10 +36,10 @@ func maxDepth(root *TreeNode) int {
 		return 1
 	}
 
-	return 1 + maxInt(maxDepth(root.Left) , maxDepth(root.Right))
+	return 1 + maxInt(maxDepth(root.Left), maxDepth(root.Right))
 }
 
-func maxInt(x, y int) int{
+func maxInt(x, y int) int {
 	if x > y {
 		return x
 	}
