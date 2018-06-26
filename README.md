@@ -59,4 +59,16 @@ leetcode
   - [后序遍历](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/tree/median/postorder)
   - [层次遍历](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/tree/median/level)
   - [齿轮遍历](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/tree/median/zigzag_level)
+  - [平衡二叉树](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/tree/simple/balance)
+  - [二叉树的最大深度](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/tree/simple/max_dep)
+  - [二叉树的最小深度](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/tree/simple/min_dep)
+  - [二叉树的所有路径](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/tree/simple/path)
+  - [路径总和](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/tree/simple/path_sum)
+  - [路径总和II](https://github.com/MaxnSter/GolangDataStructure/blob/master/leetcode/tree/simple/path_sum_2/path_sum_2.go)
+  - [路径总和III](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/tree/simple/path_sum_3)
+  - [相同的树](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/tree/simple/same)
+  - [对称二叉树](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/tree/simple/symmetric)
+- 中等
+  - [不同的搜索二叉树](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/tree/median/unique)
+ 
 to be continued...
