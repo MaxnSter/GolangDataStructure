@@ -53,10 +53,10 @@ func helper(root *TreeNode, max *int) int {
 	//左子树最大值
 	l := maxInt(helper(root.Left, max), 0)
 	//右子树最大值
-	r := maxInt(helper(root.Right, max),0)
+	r := maxInt(helper(root.Right, max), 0)
 
 	sum := maxInt(l+root.Val, r+root.Val)
-	*max = maxInt(*max, l + r + root.Val)
+	*max = maxInt(*max, l+r+root.Val)
 
 	//当前结点路径下的最大值
 	return sum

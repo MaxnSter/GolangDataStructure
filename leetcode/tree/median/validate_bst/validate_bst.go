@@ -54,6 +54,8 @@ func isValid(root *TreeNode, max int, min int) bool {
 		return true
 	}
 
+	//如果是bst,则应该: root.Val < max, root.val > min
+
 	if root.Val <= min || root.Val >= max {
 		return false
 	}

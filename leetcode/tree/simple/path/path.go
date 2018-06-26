@@ -47,20 +47,16 @@ func pathTree(root *TreeNode, path string, result *[]string) {
 		return
 	}
 
-	if root.Left == nil && root.Right == nil {
-		if path == "" {
-			path = strconv.Itoa(root.Val)
-		} else {
-			path += fmt.Sprintf("->%d", root.Val)
-		}
-		*result = append(*result, path)
-		return
-	}
-
 	if path == "" {
 		path = strconv.Itoa(root.Val)
 	} else {
 		path += fmt.Sprintf("->%d", root.Val)
+	}
+
+	if root.Left == nil && root.Right == nil {
+		//想想base case, 到底应该什么时候append
+		*result = append(*result, path)
+		return
 	}
 
 	pathTree(root.Left, path, result)
