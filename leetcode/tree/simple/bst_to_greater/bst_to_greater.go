@@ -31,7 +31,8 @@ func convertBST(root *TreeNode) *TreeNode {
 		return root
 	}
 
-	traverse(root, 0)
+	sum := 0
+	traverse(root, &sum)
 	return root
 }
 
