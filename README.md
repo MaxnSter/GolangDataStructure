@@ -52,6 +52,7 @@ leetcode
    - [接雨水](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/stack/hard/trap_rain)
    - [去除重复元素](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/stack/hard/rm_dup_letters)
    - [四则计算器](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/stack/hard/basic_caculator)
+   
 树
 - 简单
   - [前序遍历](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/tree/median/preorder)
@@ -68,7 +69,30 @@ leetcode
   - [路径总和III](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/tree/simple/path_sum_3)
   - [相同的树](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/tree/simple/same)
   - [对称二叉树](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/tree/simple/symmetric)
+  - [将有序数组转换为二叉搜索树](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/tree/simple/a_to_bst)
+  - [二叉树的层平均值](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/tree/simple/avg_level)
+  - [把二叉搜索树转换为累加树](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/tree/simple/bst_to_greater)
+  - [二叉树的直径](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/tree/simple/diameter)
+  - [翻转二叉树](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/tree/simple/invert)
+  - [合并二叉树](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/tree/simple/merge)
+  - [二叉树中第二小的节点](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/tree/simple/second_min)
+  - [另一个树的子树](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/tree/simple/subtree)
+  - [对称二叉树](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/tree/simple/symmetric)
+  - [修剪二叉搜索树](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/tree/simple/trim)
+  - [二叉搜索树的最近公共祖先](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/tree/simple/lca_bst)
+  - [左叶子之和](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/tree/simple/sum_of_left)
 - 中等
   - [不同的搜索二叉树](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/tree/median/unique)
+  - [完全二叉树的节点个数](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/tree/median/count_ct)
+  - [删除二叉搜索树中的节点](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/tree/median/delete_node_bst)
+  - [二叉搜索树中第K小的元素](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/tree/median/kth_small)
+  - [在每个树行中找最大值](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/tree/median/largest_each_line)
+  - [求根到叶子节点数字之和](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/tree/median/leaf_nums)
+  - [验证二叉搜索树](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/tree/median/validate_bst)
+  
+- 困难
+  - [二叉树的最大路径和](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/tree/hard/max_path_sum)
+  - [最长同值路径](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/tree/simple/path_longest_same)
+  - [二叉树的最近公共祖先](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/tree/median/lca)
  
 to be continued...
