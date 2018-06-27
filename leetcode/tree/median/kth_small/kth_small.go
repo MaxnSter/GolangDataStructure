@@ -1,5 +1,7 @@
 package kth_small
 
+import "github.com/MaxnSter/GolangDataStructure/leetcode/stack"
+
 /*
 230. 二叉搜索树中第K小的元素
 给定一个二叉搜索树，编写一个函数 kthSmallest 来查找其中第 k 个最小的元素。
@@ -58,4 +60,31 @@ func traverse(root *TreeNode, count *int, k int, result *int) {
 		*result = root.Val
 	}
 	traverse(root.Right, count, k, result)
+}
+
+func kthSmallestNoRecursive(root *TreeNode, k int) int {
+	s := stack.NewStack()
+	node := root
+
+	for node != nil {
+		s.Push(node)
+		node = node.Left
+	}
+
+	var curNode *TreeNode
+	for i := 0; i < k; i++ {
+		node = s.Top().(*TreeNode)
+		curNode = node
+		s.Pop()
+
+		if node.Right != nil {
+			node = node.Right
+			for node != nil {
+				s.Push(node)
+				node = node.Left
+			}
+		}
+	}
+
+	return curNode.Val
 }
