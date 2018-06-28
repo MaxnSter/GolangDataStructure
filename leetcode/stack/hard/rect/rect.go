@@ -115,7 +115,6 @@ func LargestRectangleArea(heights []int) int {
 	return maxArea
 }
 
-
 //这道题的关键思想是,如果
 
 func largestRectangleArea1(heights []int) int {
@@ -133,11 +132,11 @@ func largestRectangleArea1(heights []int) int {
 	maxArea := 0
 
 	for i := 0; i < len(heights); i++ {
-		if idxStack.Empty() || heights[i] >= heights[idxStack.Top().(int)]  {
+		if idxStack.Empty() || heights[i] >= heights[idxStack.Top().(int)] {
 			//注意点1:存入栈的是下标
 			idxStack.Push(i)
 		} else {
-			for !idxStack.Empty() &&  heights[idxStack.Top().(int)] >= heights[i] {
+			for !idxStack.Empty() && heights[idxStack.Top().(int)] >= heights[i] {
 				//注意点2:计算面积的height是元素值
 				h := heights[idxStack.Top().(int)]
 				idxStack.Pop()
@@ -149,7 +148,7 @@ func largestRectangleArea1(heights []int) int {
 					w = i - idxStack.Top().(int) - 1
 				}
 
-				maxArea = maxInt(maxArea, h * w)
+				maxArea = maxInt(maxArea, h*w)
 			}
 
 			idxStack.Push(i)

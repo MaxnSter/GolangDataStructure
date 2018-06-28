@@ -7,7 +7,13 @@ package random
 要求返回这个链表的深度拷贝。
 */
 
-//这道题解法很有意思
+type ListNode struct {
+	Val    int
+	Next   *ListNode
+	Random *ListNode
+}
+
+// 很有意思的一道题
 //
 //      |----|
 //      |    V
@@ -18,12 +24,6 @@ package random
 //
 // 然后就可以有 A1->random = A->random->next,当然考虑random指向nil的情况
 //最后再把A1,B1,C1分离出来
-type ListNode struct {
-	Val    int
-	Next   *ListNode
-	Random *ListNode
-}
-
 func copyRandomList(head *ListNode) *ListNode {
 	copyList, root := &ListNode{}, head
 

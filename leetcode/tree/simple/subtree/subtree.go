@@ -48,6 +48,23 @@ type TreeNode struct {
 
 func isSubtree(s *TreeNode, t *TreeNode) bool {
 	if s == nil || t == nil {
+		/*
+			if s == nil && t == nil {
+				return true
+			}
+
+			if s == nil && t != nil {
+				return false
+			}
+
+			if s != nil && t == nil {
+				return false
+			}
+
+			s != nil, t != nil 做操作...
+
+			以后请简化成现在这样
+		*/
 		return s == nil && t == nil
 	}
 

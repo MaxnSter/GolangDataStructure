@@ -7,5 +7,5 @@ import (
 )
 
 func Test(t *testing.T) {
-	assert.Equal(t, 4, largestRectangleArea1([]int{2,4}))
+	assert.Equal(t, 4, largestRectangleArea1([]int{2, 4}))
 }

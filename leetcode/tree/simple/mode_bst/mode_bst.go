@@ -35,10 +35,10 @@ type TreeNode struct {
 }
 
 func findMode(root *TreeNode) []int {
-	m,result, max := make(map[int]int), make([]int, 0), 0
+	m, result, max := make(map[int]int), make([]int, 0), 0
 	inorder(root, m, &max)
 
-	for k, count := range  m {
+	for k, count := range m {
 		if count == max {
 			result = append(result, k)
 		}

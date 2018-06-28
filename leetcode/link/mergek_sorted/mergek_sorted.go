@@ -41,11 +41,13 @@ func (s *source) Next() bool {
 }
 
 func (s *source) OutputTo(to interface{}) {
+	// *ListNode -> head; **ListNode -> *head; l -> &head
 	l := to.(**ListNode)
 	(*l).Next = &ListNode{Val: s.list.Val}
 	*l = (*l).Next
 }
 
+//最小堆,就是梭
 func mergeKLists(lists []*ListNode) *ListNode {
 	head := &ListNode{}
 	merge := head

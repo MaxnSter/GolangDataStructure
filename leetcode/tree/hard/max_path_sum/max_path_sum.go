@@ -50,9 +50,8 @@ func helper(root *TreeNode, max *int) int {
 		return 0
 	}
 
-	//左子树最大值
+	//自底向上收集
 	l := maxInt(helper(root.Left, max), 0)
-	//右子树最大值
 	r := maxInt(helper(root.Right, max), 0)
 
 	sum := maxInt(l+root.Val, r+root.Val)

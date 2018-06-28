@@ -25,6 +25,8 @@ type ListNode struct {
 	Next *ListNode
 }
 
+//遍历一遍,遇到重复的直接next往后就好了
+//又因为是单链表,需要一个prev
 func deleteDuplicates(head *ListNode) *ListNode {
 	dummyHead := &ListNode{Next: head}
 	head = dummyHead

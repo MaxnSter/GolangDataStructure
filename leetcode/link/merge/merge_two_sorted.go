@@ -38,6 +38,7 @@ func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 	for l1 != nil && l2 != nil {
 		if l1.Val <= l2.Val {
 			// 直接利用现有节点,无需再new
+			// 谁在这里new谁就傻
 			l.Next = l1
 			l1 = l1.Next
 		} else {
@@ -49,6 +50,7 @@ func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 	}
 
 	// 不需要for
+	//谁在这里for谁就傻
 	if l1 != nil {
 		l.Next = l1
 	}

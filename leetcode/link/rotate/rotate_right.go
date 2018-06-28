@@ -28,7 +28,8 @@ type ListNode struct {
 	Next *ListNode
 }
 
-// 我把链表的优势丢了, 反思.
+//1.找出分离点,重新结合结合即刻
+//2.防止k>0实际长度,取模
 func rotateRight1(head *ListNode, k int) *ListNode {
 	if head == nil || head.Next == nil {
 		return head
@@ -36,7 +37,7 @@ func rotateRight1(head *ListNode, k int) *ListNode {
 
 	listLen := getListLen(head)
 	k = k % listLen
-	if k == 0 {
+	if k <= 0 {		//also handle negative k
 		return head
 	}
 

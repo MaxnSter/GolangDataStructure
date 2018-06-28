@@ -22,6 +22,20 @@ type ListNode struct {
 	Next *ListNode
 }
 
+//也是一直移动,找出那一重复的块,整个next
+// 1->2->3->3->4->4->5
+//    |  |  |
+//    V  V  V
+//  head slow fast
+//
+// head.Next = fast.Next
+//
+// 1->2->4->4->5
+//    |
+//    V
+//   head
+//
+//这个过程
 func deleteDuplicates(head *ListNode) *ListNode {
 	dummyHead := &ListNode{Next: head}
 	head = dummyHead

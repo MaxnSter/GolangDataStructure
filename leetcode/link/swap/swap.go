@@ -24,7 +24,7 @@ type ListNode struct {
 	Next *ListNode
 }
 
-//链表问题,画图就可以了
+//链表问题,画图就可以了,看下面那个
 func swapPairs(head *ListNode) *ListNode {
 	if head == nil || head.Next == nil {
 		return head

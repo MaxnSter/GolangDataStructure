@@ -24,11 +24,19 @@ type ListNode struct {
 	Next *ListNode
 }
 
+//如下:
+//                              --->: 1->2->3
+//1->2->3->4->5        -> 分离 -|
+//                             ---->: 4->5  逆序: 5->4
+//合并: 1->5->2->4->3
+//
+//就这样
 func reorderList(head *ListNode) {
 	if head == nil || head.Next == nil {
 		return
 	}
 
+	//FIXME use fast and slow
 	count, subNode := listLen(head), head
 	for i := 0; i < (count-1)/2; i++ {
 		subNode = subNode.Next

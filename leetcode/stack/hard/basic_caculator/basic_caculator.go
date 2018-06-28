@@ -52,12 +52,14 @@ func calculate(s string) int {
 	return evalRPN(convert)
 }
 
+//中缀表达式转后缀
 func convertTo(s []string) []string {
 	output := make([]string, 0)
 	operatorStack := stack.NewStack()
 
 	for _, ss := range s {
 		if !isOperator(ss) {
+			//是数字,直接输出
 			output = append(output, ss)
 			continue
 		}
@@ -88,7 +90,9 @@ func convertTo(s []string) []string {
 
 		//弹出所有元素,直到遇到比自己优先级低的
 		//也就意味着,如果栈不为空并且栈顶元素优先级大于等于当前优先级,就一直弹出
-		for !operatorStack.Empty() && priority[ss] <= priority[operatorStack.Top().(string)] {
+		//有一个例外:除非是在处理")",否则我们绝不弹出"("
+		for !operatorStack.Empty() && priority[ss] <= priority[operatorStack.Top().(string)] &&
+			operatorStack.Top().(string) != "(" {
 			op := operatorStack.Top().(string)
 			output = append(output, op)
 			operatorStack.Pop()
@@ -99,6 +103,7 @@ func convertTo(s []string) []string {
 
 	}
 
+	//遍历结束,弹出其他剩余元素
 	for !operatorStack.Empty() {
 		op := operatorStack.Top().(string)
 		output = append(output, op)

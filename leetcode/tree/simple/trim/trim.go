@@ -69,4 +69,3 @@ func trimBST(root *TreeNode, L int, R int) *TreeNode {
 	}
 
 }
-

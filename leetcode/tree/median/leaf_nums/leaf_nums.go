@@ -64,7 +64,7 @@ func pathTree(root *TreeNode, curSum int, numbers *[]int) {
 		return
 	}
 
-	curSum = curSum * 10 + root.Val
+	curSum = curSum*10 + root.Val
 
 	if root.Left == nil && root.Right == nil {
 		//我的base case, 也就是只有一个节点时,直接append
@@ -75,4 +75,3 @@ func pathTree(root *TreeNode, curSum int, numbers *[]int) {
 	pathTree(root.Left, curSum, numbers)
 	pathTree(root.Right, curSum, numbers)
 }
-

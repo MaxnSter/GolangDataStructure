@@ -18,7 +18,7 @@ func sortList(head *ListNode) *ListNode {
 		return head
 	}
 
-	//不断推进
+	//链表做归并,关键点是分离成两个部分,其他都一样
 	mid := midden(head)
 	left, right := head, mid.Next
 	mid.Next = nil
@@ -42,6 +42,7 @@ func midden(head *ListNode) *ListNode {
 }
 
 func merge(l1 *ListNode, l2 *ListNode) *ListNode {
+	//FIXME 这样做,返回的就不是同一个链表了,但是既然已经强调有返回值了,所以算不上是有问题吧.
 	dummyHead := &ListNode{}
 	head := dummyHead
 

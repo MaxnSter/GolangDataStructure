@@ -21,38 +21,12 @@ type ListNode struct {
 	Next *ListNode
 }
 
-func removeNthFromEnd(head *ListNode, n int) *ListNode {
-	if head == nil {
-		return nil
-	}
-	ll := listLen(head)
-
-	if n == ll {
-		return head.Next
-	}
-
-	tmp := head
-	for i := 1; i < ll-n; i++ {
-		tmp = tmp.Next
-	}
-
-	tmp.Next = tmp.Next.Next
-	return head
-}
-
-func listLen(l *ListNode) (n int) {
-	for l != nil {
-		n++
-		l = l.Next
-	}
-	return
-}
-
 //这个才是真正的一趟遍历,下面那个可以扔掉了
 func removeNthFromEndEffective(head *ListNode, n int) *ListNode {
 	dummyHead := &ListNode{Next: head} //for n == len(head)
 	fast, slow := dummyHead, dummyHead
 
+	//巧用快慢指针,J贼得很
 	for fast != nil {
 		if n <= 0 {
 			slow = slow.Next

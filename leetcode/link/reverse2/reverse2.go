@@ -22,6 +22,9 @@ type ListNode struct {
 
 //遍历过程同时反转,关键点是找到反转点的起始位置和结束位置
 //画图出来就好
+//1->2->3->4->5->NULL
+// 1->NULL reverse:4->3->2(遍历过程同时手机) head:5->NULL
+// 1->4->3->2->5->NULL
 func reverseBetween(head *ListNode, m int, n int) *ListNode {
 	if head == nil || head.Next == nil || m == n {
 		return head
@@ -34,6 +37,7 @@ func reverseBetween(head *ListNode, m int, n int) *ListNode {
 
 	for i := 1; i <= n+1; i++ {
 		if i == m {
+			//记录开始reverse地方
 			subPrev = head
 			head = head.Next
 			subPrev.Next = nil
@@ -47,10 +51,12 @@ func reverseBetween(head *ListNode, m int, n int) *ListNode {
 				reverseTail = reverse
 			}
 		} else {
+			//记录结束reverse的地方
 			head = head.Next
 		}
 	}
 
+	//合并
 	subPrev.Next = reverse
 	reverseTail.Next = head
 	return dummyHead.Next

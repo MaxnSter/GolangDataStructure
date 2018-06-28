@@ -17,6 +17,7 @@ func hashCycle(head *ListNode) bool {
 		return false
 	}
 
+	//快指针走两步,慢指针走一步,如果二者能够相遇说明链表有环
 	fast, slow := head, head
 	for fast != nil && fast.Next != nil {
 		fast = fast.Next.Next
@@ -87,13 +88,12 @@ B:     b1 → b2 → b3
 程序尽量满足 O(n) 时间复杂度，且仅用 O(1) 内存。
 */
 func getIntersectionNode(headA *ListNode, headB *ListNode, endA *ListNode, endB *ListNode) *ListNode {
-	//len(listA) > len(listB)
-	//listA先走lenMax-lenMin步,然后同时一起走
-	//如果相交,一起走的过程一定会到达某同一个结点
 	if headA == endA || headB == endB {
 		return nil
 	}
 
+	//len(listA) > len(listB)
+	//listA先走lenMax-lenMin步,然后同时一起走
 	lenA, lenB := listLen(headA, endA), listLen(headB, endB)
 	if lenA > lenB {
 		for i := 0; i < lenA-lenB; i++ {
@@ -105,6 +105,7 @@ func getIntersectionNode(headA *ListNode, headB *ListNode, endA *ListNode, endB 
 		}
 	}
 
+	//如果相交,一起走的过程一定会到达某同一个结点
 	for headA != endA && headB != endB {
 		if headA == headB {
 			return headA
@@ -133,6 +134,7 @@ func genInterSectionNodeInCycleList(headA *ListNode, headB *ListNode) *ListNode 
 		node := getIntersectionNode(headA, headB, inLoopA, inLoopB)
 
 		if node == nil {
+			//在入环入环之前没有相交,入环点就是相交点
 			return inLoopA
 		} else {
 			return node
@@ -175,6 +177,6 @@ func genInterSectionNodeInCycleList(headA *ListNode, headB *ListNode) *ListNode 
 //终极问题
 //判断两个链表是否相交?
 //1.判断两个链表是否有环
-//2.如果一个有环,一个没有环,不可能相交
+//2.如果一个有环,一个没有环,不可能相交(可以直接求入环点,如果一个入环点为nil,另一个不为空,也不可能相交)
 //3.如果两个都没有环,转换为无环节点相交的问题
 //4.如果两个都有环,转换未有环节点相交的问题

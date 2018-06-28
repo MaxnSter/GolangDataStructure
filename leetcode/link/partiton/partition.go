@@ -19,6 +19,7 @@ type ListNode struct {
 	Next *ListNode
 }
 
+//遍历一遍,把小于那个数的节点收集起来,再合并
 func partition(head *ListNode, x int) *ListNode {
 	dummyHead, dummySmallerHead := &ListNode{Next: head}, &ListNode{}
 	head, smallerHead := dummyHead, dummySmallerHead

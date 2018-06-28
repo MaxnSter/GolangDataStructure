@@ -23,7 +23,7 @@ type ListNode struct {
 	Val  int
 	Next *ListNode
 }
-
+//直接转数组
 func isPalindrome(head *ListNode) bool {
 	var output []int
 	dumpListTo(head, &output)
@@ -47,6 +47,9 @@ func dumpListTo(head *ListNode, output *[]int) {
 	}
 }
 
+//1.找到分离点
+//2.然后reverse后半段,因为奇数情况下把最中间那个结点放在前半段了
+//3.返回时给人家还原
 func isPalindromeEffective(head *ListNode) bool {
 	if head == nil || head.Next == nil {
 		return true

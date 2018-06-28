@@ -27,6 +27,8 @@ type ListNode struct {
 }
 
 //画图画图就会了
+//注意点1:分离和复原
+//注意点2:reverse之后需要继续遍历的指针位置变了,要让它指向正确的位置
 func reverseKGroup(head *ListNode, k int) *ListNode {
 	if head == nil || head.Next == nil || k == 1 {
 		return head

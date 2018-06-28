@@ -70,7 +70,7 @@ func deleteNode(root *TreeNode, key int) *TreeNode {
 		root.Val = maxInL.Val
 		root.Left = deleteNode(root.Left, root.Val)
 	} else {
-		if root.Left == nil { // also handles 0 child
+		if root.Left == nil { // also handles 0 child,这个可以说很机智了
 			root = root.Right
 		} else if root.Right == nil {
 			root = root.Left

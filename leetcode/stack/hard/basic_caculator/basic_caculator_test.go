@@ -8,4 +8,5 @@ import (
 
 func Test(t *testing.T) {
 	assert.Equal(t, 27, calculate("100000000/1/2/3/4/5/6/7/8/9/10"))
+	assert.Equal(t, 34, calculate("1+2*3+(2*3+3)*3"))
 }

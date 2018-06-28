@@ -26,6 +26,7 @@ type ListNode struct {
 }
 
 //绝对不可以使用list-to-int的方法,会溢出!!!!!
+//注意进位
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	l1 = reverseList(l1)
 	l2 = reverseList(l2)

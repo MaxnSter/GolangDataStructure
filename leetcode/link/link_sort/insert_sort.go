@@ -38,6 +38,7 @@ func insertionSortList(head *ListNode) *ListNode {
 	for endNode := head; endNode.Next != nil; {
 		insertNode, insertNodePrev := endNode.Next, endNode
 
+		//只能向遍历,然后再调整节点,还有更好的办法吗?
 		hHead := dummyHead
 		for ; hHead != insertNodePrev && hHead.Next.Val < insertNode.Val; hHead = hHead.Next {
 		}

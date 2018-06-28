@@ -110,7 +110,7 @@ func decodeString2(s string) string {
 
 	for i := 0; i < len(s); i++ {
 		if isNumber(s[i]) {
-			digit = digit * 10 + int(s[i]-'0')
+			digit = digit*10 + int(s[i]-'0')
 			continue
 		}
 
