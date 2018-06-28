@@ -120,4 +120,6 @@ leetcode
   - [最长同值路径](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/tree/simple/path_longest_same)
   - [二叉树的最近公共祖先](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/tree/median/lca)
  
+排序
+  - [7种排序](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/sort/basic)
 to be continued...
