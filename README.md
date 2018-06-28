@@ -37,6 +37,31 @@ leetcode
 - 困难
     - [两个排序数组的中位数](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/array/hard/median_two_sorted)
 
+链表
+- 简单
+   - [判断链表是否有环](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/link/cycle)
+   - [链表入环点](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/link/cycle)
+   - [单链表相交点](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/link/cycle)
+   - [判断两个链表是否相交](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/link/cycle)
+   - [删除排序链表中的重复元素](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/link/dup)
+   - [删除排序链表中的重复元素 II](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/link/dup2)
+   - [链表k逆序](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/link/kreverse)
+   - [对链表进行插入排序](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/link/link_sort)
+   - [对链表进行归并排序](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/link/link_sort)
+   - [合并两个有序链表](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/link/merge)
+   - [合并k个有序链表](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/link/mergek_sorted)
+   - [奇偶链表](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/link/odd_even)
+   - [回文链表](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/link/parlindrome)
+   - [分隔链表](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/link/partiton)
+   - [复制带随机指针的链表](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/link/random)
+   - [重排链表](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/link/reorder)
+   - [反转链表](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/link/reverse)
+   - [反转链表 II](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/link/reverse2)
+   - [删除链表的倒数第n个节点](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/link/rmN)
+   - [旋转链表](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/link/rotate)
+   - [两两交换链表中的节点](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/link/swap)
+   - [两数相加 II](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/link/two_sum)
+
 栈
 - 简单
    - [最小栈](https://github.com/MaxnSter/GolangDataStructure/tree/master/leetcode/stack/easy/min_stack)
