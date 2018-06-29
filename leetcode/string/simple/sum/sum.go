@@ -1,6 +1,7 @@
 package sum
 
 import (
+	"fmt"
 	"strconv"
 	"strings"
 
@@ -20,13 +21,21 @@ num1 和num2 都不包含任何前导零。
 */
 //注意进位就好
 func addStrings(num1 string, num2 string) string {
+	return AddStringBase(num1, num2, 10)
+}
+
+func AddStringBase(num1 string, num2 string, base int) string {
+	if base <= 0 {
+		panic(fmt.Sprintf("invalid base:%d\n", base))
+	}
+
 	result, carry := stack.NewStack(), 0
 	idx1, idx2 := len(num1)-1, len(num2)-1
 
 	for idx1 >= 0 && idx2 >= 0 {
 		sum := int(num1[idx1]-'0'+num2[idx2]-'0') + carry
-		carry = sum / 10
-		result.Push(sum % 10)
+		carry = sum / base
+		result.Push(sum % base)
 
 		idx1--
 		idx2--
@@ -34,16 +43,16 @@ func addStrings(num1 string, num2 string) string {
 
 	for idx1 >= 0 {
 		sum := int(num1[idx1]-'0') + carry
-		carry = sum / 10
-		result.Push(sum % 10)
+		carry = sum / base
+		result.Push(sum % base)
 
 		idx1--
 	}
 
 	for idx2 >= 0 {
 		sum := int(num2[idx2]-'0') + carry
-		carry = sum / 10
-		result.Push(sum % 10)
+		carry = sum / base
+		result.Push(sum % base)
 
 		idx2--
 	}
@@ -59,4 +68,5 @@ func addStrings(num1 string, num2 string) string {
 	}
 
 	return sum.String()
+
 }
