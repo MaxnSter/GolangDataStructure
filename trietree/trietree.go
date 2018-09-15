@@ -56,7 +56,6 @@ func (t *trieTree) AddWord(word string) error {
 			tmp.isEnd = true
 		}
 	}
-
 	return nil
 
 }

@@ -23,7 +23,7 @@ func OR(chs ...<-chan interface{}) <-chan interface{} {
 			case <-chs[0]:
 			case <-chs[1]:
 			case <-chs[2]:
-			case OR(append(chs[3:], orDone)...):
+			case <-OR(append(chs[3:], orDone)...):
 			}
 		}
 

@@ -1,11 +1,9 @@
 package uuid
 
 import (
+	"errors"
 	"sync"
 	"time"
-
-	"github.com/MaxnSter/gnet/logger"
-	"github.com/pkg/errors"
 )
 
 /*
@@ -71,8 +69,6 @@ try:
 
 		//这一毫秒内生成的uuid数量已达到最大值,需要等待下一毫秒
 		if w.number > numberMax {
-			logger.Warningln("uuid's max number/ms limit, spin for 1ms")
-			//自旋还是阻塞好?? benchmark测试后,spin比block性能好那么一点点
 			for curTime <= w.timestamp {
 				curTime = time.Now().UnixNano() / 1e6
 			}
