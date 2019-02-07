@@ -9,11 +9,19 @@ import (
 
 type Runner interface {
 	Do() error
-	Catch(func(error)error) Runner
-	Final(func(error)error) Runner
+	Catch(func(error) error) Runner
+	Final(func(error) error) Runner
 }
 
 var _ Runner = (*runner)(nil)
+
+type PanicErr struct {
+	err error
+}
+
+func (p *PanicErr) Error() string {
+	return p.err.Error()
+}
 
 type runner struct {
 	try   func() error
@@ -21,8 +29,8 @@ type runner struct {
 	final func(error) error
 }
 
-func Try(f func()error) Runner {
-	return &runner{try:f}
+func Try(f func() error) Runner {
+	return &runner{try: f}
 }
 
 func (r *runner) Do() (err error) {
@@ -32,7 +40,8 @@ func (r *runner) Do() (err error) {
 			n := runtime.Stack(buf, false)
 			fmt.Fprintf(os.Stderr, "runner panic: %v", string(buf[:n]))
 
-			err = errors.New(fmt.Sprintf("%v", rc))
+			// type assert helper
+			err = &PanicErr{err: errors.New(fmt.Sprintf("%v", rc))}
 		}
 
 		if err != nil && r.catch != nil {
@@ -57,5 +66,3 @@ func (r *runner) Final(f func(error) error) Runner {
 	r.final = f
 	return r
 }
-
-
