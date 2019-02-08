@@ -36,16 +36,18 @@ type PriorityCh struct {
 	Priority int
 }
 
-func FanInPriority(ps ...PriorityCh) Out {
+func FanInWithPriority(ps ...PriorityCh) Out {
 	sort.Slice(ps, func(i, j int) bool {
-		return ps[i].Priority < ps[j].Priority
+		return ps[i].Priority > ps[j].Priority
 	})
 
 	var cs []<-chan interface{}
 	for _, p := range ps {
 		cs = append(cs, p.Ch)
 	}
-	return FanIn(cs...)
+	return FanInWithPicker(func(idx []int) []int {
+		return idx
+	}, cs...)
 }
 
 type token struct {
@@ -55,8 +57,8 @@ type token struct {
 
 type OnPick func(idx []int) []int
 
-func FanInWithPicker(p OnPick, cs ...<-chan interface{}) Out {
-	if p == nil {
+func FanInWithPicker(picker OnPick, cs ...<-chan interface{}) Out {
+	if picker == nil {
 		return FanIn(cs...)
 	}
 
@@ -91,7 +93,7 @@ func FanInWithPicker(p OnPick, cs ...<-chan interface{}) Out {
 			return data
 		}
 	}
-	send := func(i int, ch <-chan interface{}) {
+	receive := func(i int, ch <-chan interface{}) {
 		for data := range ch {
 			acquire(i, data)
 		}
@@ -101,7 +103,7 @@ func FanInWithPicker(p OnPick, cs ...<-chan interface{}) Out {
 	out := make(chan interface{})
 	// start work
 	for i, ch := range cs {
-		go send(i, ch)
+		go receive(i, ch)
 	}
 	// picking
 	tryF := func() error{
@@ -116,7 +118,7 @@ func FanInWithPicker(p OnPick, cs ...<-chan interface{}) Out {
 				break
 			}
 
-			idx = p(available)
+			idx = picker(available)
 			for _, i := range idx {
 				data := release(i)
 				if data != nil {

@@ -71,3 +71,56 @@ func TestFanInWithPicker(t *testing.T) {
 
 	assert.EqualValues(t, expect, actual)
 }
+
+func TestFanInPriority(t *testing.T) {
+	var expect []int
+	for i := 0; i < 100; i++ {
+		expect = append(expect, 4)
+		expect = append(expect, 3)
+		expect = append(expect, 2)
+		expect = append(expect, 1)
+	}
+	sendF := func(ch chan interface{}, val interface{}) {
+		num := 100
+		for i := 0; i < num; i++ {
+			ch <- val
+		}
+		close(ch)
+	}
+
+	ch1 := make(chan interface{})
+	p1 := PriorityCh{
+		Ch:       ch1,
+		Priority: 1,
+	}
+	go sendF(ch1, 1)
+
+	ch2 := make(chan interface{})
+	p2 := PriorityCh{
+		Ch:       ch2,
+		Priority: 2,
+	}
+	go sendF(ch2, 2)
+
+	ch3 := make(chan interface{})
+	p3 := PriorityCh{
+		Ch:       ch3,
+		Priority: 3,
+	}
+	go sendF(ch3, 3)
+
+	ch4 := make(chan interface{})
+	p4 := PriorityCh{
+		Ch:       ch4,
+		Priority: 4,
+	}
+	go sendF(ch4, 4)
+
+	var actual []int
+	out := FanInWithPriority(p1, p2, p3, p4)
+	for data := range out {
+		actual = append(actual, data.(int))
+	}
+
+	assert.EqualValues(t, expect, actual)
+}
