@@ -55,6 +55,8 @@ type token struct {
 	done chan struct{}
 }
 
+type tokenClosed struct {}
+
 type OnPick func(available []int) []int
 
 func FanInWithPicker(picker OnPick, cs ...<-chan interface{}) Out {
@@ -88,7 +90,7 @@ func FanInWithPicker(picker OnPick, cs ...<-chan interface{}) Out {
 	take := func(i int) interface{}{
 		select {
 		case <-ts[i].done:
-			return nil
+			return tokenClosed{}
 		case data := <-ts[i].t:
 			return data
 		}
@@ -121,7 +123,8 @@ func FanInWithPicker(picker OnPick, cs ...<-chan interface{}) Out {
 			idx = picker(available)
 			for _, i := range idx {
 				data := take(i)
-				if data != nil {
+				// insure caller able to transfer nil
+				if _, ok :=  data.(tokenClosed); !ok {
 					out <- data
 				}
 			}
