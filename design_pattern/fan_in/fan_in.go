@@ -36,20 +36,6 @@ type PriorityCh struct {
 	Priority int
 }
 
-type pcs []PriorityCh
-
-func (p pcs) Len() int {
-	return len(p)
-}
-
-func (p pcs) Less(i, j int) bool {
-	return p[i].Priority < p[j].Priority
-}
-
-func (p pcs) Swap(i, j int) {
-	p[i], p[j] = p[j], p[i]
-}
-
 func FanInPriority(ps ...PriorityCh) Out {
 	sort.Slice(ps, func(i, j int) bool {
 		return ps[i].Priority < ps[j].Priority
